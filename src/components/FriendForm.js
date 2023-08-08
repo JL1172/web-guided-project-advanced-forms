@@ -27,7 +27,7 @@ export default function FriendForm(props) {
         <h2>Add a Friend</h2>
 
         {/* 🔥 DISABLE THE BUTTON */}
-        <button>submit</button>
+        <button disabled = {disabled}>submit</button>
 
         <div className='errors'>
           {/* 🔥 RENDER THE VALIDATION ERRORS HERE */}
@@ -82,15 +82,15 @@ export default function FriendForm(props) {
         {/* ////////// RADIO BUTTONS ////////// */}
         {/* ////////// RADIO BUTTONS ////////// */}
         <label htmlFor='single'>Single
-            <input id = "single" type = "radio" name = "civil"
-            value = "single" onChange={onChange} 
-            checked ={values.civil === 'single'} />
+          <input id="single" type="radio" name="civil"
+            value="single" onChange={onChange}
+            checked={values.civil === 'single'} />
         </label>
 
         <label htmlFor='married'>Married
-            <input id = "married" type='radio' name ="civil"
-            value = "married" checked = {values.civil === "married"}
-            onChange = {onChange} />
+          <input id="married" type='radio' name="civil"
+            value="married" checked={values.civil === "married"}
+            onChange={onChange} />
         </label>
       </div>
 
@@ -100,16 +100,16 @@ export default function FriendForm(props) {
         {/* ////////// CHECKBOXES ////////// */}
         {/* ////////// CHECKBOXES ////////// */}
         {/* ////////// CHECKBOXES ////////// */}
-        <label>Hiking
-
+        <label htmlFor='hiking'>Hiking
+          <input id="hiking" type="checkbox" checked={values.hiking} onChange={onChange} name="hiking" />
         </label>
 
-        <label>Reading
-
+        <label htmlFor='reading'>Reading
+          <input id="reading" type="checkbox" checked={values.reading} onChange={onChange} name="reading" />
         </label>
 
-        <label>Coding
-
+        <label htmlFor='coding'>Coding
+          <input id="coding" type="checkbox" checked={values.coding} onChange={onChange} name="coding" />
         </label>
       </div>
     </form>

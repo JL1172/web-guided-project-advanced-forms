@@ -12,6 +12,7 @@
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
+    "a": "^3.0.1",
     "axios": "^0.26.0",
     "msw": "^0.38.1",
     "react": "^17.0.2",
