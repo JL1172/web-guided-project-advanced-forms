@@ -16,8 +16,9 @@ export default function FriendForm(props) {
 
   const onChange = evt => {
     /* 🔥 FIX THIS SO IT ALSO WORKS WITH CHECKBOXES */
-    const { name, value } = evt.target
-    change(name, value)
+    const { name, value, checked } = evt.target;
+    const valueToUse = evt.target.type === "checkbox" ? checked : value;
+    change(name, valueToUse)
   }
 
   return (
@@ -80,12 +81,16 @@ export default function FriendForm(props) {
         {/* ////////// RADIO BUTTONS ////////// */}
         {/* ////////// RADIO BUTTONS ////////// */}
         {/* ////////// RADIO BUTTONS ////////// */}
-        <label>Single
-
+        <label htmlFor='single'>Single
+            <input id = "single" type = "radio" name = "civil"
+            value = "single" onChange={onChange} 
+            checked ={values.civil === 'single'} />
         </label>
 
-        <label>Married
-
+        <label htmlFor='married'>Married
+            <input id = "married" type='radio' name ="civil"
+            value = "married" checked = {values.civil === "married"}
+            onChange = {onChange} />
         </label>
       </div>
 
